@@ -1,5 +1,5 @@
 function decasteljauBezier(points) {
-    // Draws a Bezier curve using the DeCasteljau's algorithm
+    // Draws a Bezier curve using DeCasteljau's algorithm
     if (points.length <= 1) { return }
     const sections = max(100, 6 * points.length);
     beginShape();
@@ -21,6 +21,7 @@ function decasteljauBezier(points) {
 
 
 function bernsteinBezier(points) {
+    // Draws a Bezier curve using Bernstein's algorithm
     if (points.length <= 1) { return }
     const n = points.length - 1;
     const sections = max(100, 6 * points.length);
@@ -39,6 +40,8 @@ function bernsteinBezier(points) {
 
 
 function polyCoeffsBezier(points) {
+    // Draws a Bezier curve using cached polynomial coefficients algorithm
+
     // Caution: will overflow for too many control points
     if (points.length <= 1) { return }
     const n = points.length - 1;
